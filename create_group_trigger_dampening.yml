@@ -4,9 +4,9 @@
   tasks:
   - name: Create group trigger dampenings
     hawkular_alerts_group_dampening:
-      hawkular_api_hostname: 'hawkular-hostname.example.com'
-      hawkular_api_port: 443
-      hawkular_api_auth_token: '******'
+      hawkular_api_hostname: 'localhost'
+      hawkular_api_port: 8080
+      hawkular_api_auth_token: 'Basic amRvZTpwYXNzd29yZA=='
       tenant: '_system'
       group_id: 'test_group-01'
       state: 'present'

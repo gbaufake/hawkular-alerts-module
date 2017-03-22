@@ -4,7 +4,8 @@
 DOCUMENTATION = '''
 ---
 module: hawkular_alerts_group_trigger
-short_description: Creating, updating and deleting Group Triggers in Hawkular Alerting
+description: The hawkular_alerts_group_trigger module supports creating, updating, listing and deleting Group Triggers in Hawkular Alerts
+short_description: Creating, updating, listing and deleting Group Triggers in Hawkular Alerting
 requirements: [ hawkular/hawkular-client-python ]
 author: Daniel Korn (@dkorn)
 options:
@@ -40,7 +41,7 @@ options:
   group_id:
     description:
       - the group trigger id. This is the primary field on which one matches
-      an existing trigger
+        an existing trigger
     required: True
   severity:
     description:
@@ -60,7 +61,7 @@ options:
   scheme:
     description:
       - the hawkular scheme
-    default: 'https'
+    default: 'http'
     required: False
     choices: ['https', 'http']
   cafile:
@@ -72,9 +73,9 @@ options:
     description:
       - the state of the group trigger
       - On present, it will create the group trigger
-      if it does not exist, or update it if needed
+        if it does not exist, or update it if needed
       - On absent, it will delete the group trigger,
-      if it exists
+        if it exists
       - On list, it will return all triggers in the tenant
     required: True
     choices: ['present', 'absent', 'list']
@@ -345,7 +346,7 @@ def main():
             auto_resolve=dict(required=False, type='bool', default=False),
             tags=dict(required=False, type='dict'),
             state=dict(required=True, type='str', choices=['present', 'absent', 'list']),
-            scheme=dict(required=False, type='str', choices=['https', 'http'], default='https'),
+            scheme=dict(required=False, type='str', choices=['https', 'http'], default='http'),
             enabled=dict(required=False, type='bool', default=True),
             ca_file_path=dict(required=False, type='str'),
             verify_ssl=dict(required=False, type='bool', default=True),
