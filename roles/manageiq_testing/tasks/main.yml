@@ -1,0 +1,14 @@
+- name: Install Hawkular Client on Pip
+  pip:
+    name: hawkular-client
+
+- name: Create Group Trigger
+  hawkular_alerts_group_trigger:
+   hawkular_api_hostname: "{{ hawkular_hostname }}"
+   hawkular_api_port: 8080
+   hawkular_api_auth_token: 'Basic amRvZTpwYXNzd29yZA=='
+   tenant: 'hawkular-system'
+   group_id: 'test_group-02'
+   name: 'Test Group 01'
+   severity: 'HIGH'
+   state: 'present'
